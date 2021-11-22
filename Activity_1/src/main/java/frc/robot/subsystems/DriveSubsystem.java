@@ -25,8 +25,10 @@ public class DriveSubsystem extends SubsystemBase {
   // Make sure to set the right amount of motors! (if you only have 2 motors don't make 4)
 
   TalonSRX leftMotor1 = new TalonSRX(DriveConstants.kLeftMotor1Port);
-  
   TalonSRX rightMotor1 = new TalonSRX(DriveConstants.kRightMotor1Port);
+  
+  TalonSRX leftMotor2 = new TalonSRX(DriveConstants.kLeftMotor2Port);
+  TalonSRX rightMotor2 = new TalonSRX(DriveConstants.kRightMotor2Port);
 
   //how to set up sparkmaxes, if your robot has those
   // CANSparkMax leftMotor1 = new CANSparkMax(DriveConstants.kLeftMotor1Port, MotorType.kBrushless);
@@ -40,8 +42,8 @@ public class DriveSubsystem extends SubsystemBase {
    */
   public DriveSubsystem() {
     //how to follow motors with sparkmaxes
-    // leftMotor2.follow(leftMotor1);
-    // rightMotor2.follow(rightMotor1);
+     leftMotor2.follow(leftMotor1);
+     rightMotor2.follow(rightMotor1);
 
     //TODO: 1. Your robot may need to have the motors inverted
     //leftMotor1.setInverted(true);
