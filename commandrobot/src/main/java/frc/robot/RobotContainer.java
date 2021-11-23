@@ -29,7 +29,7 @@ public class RobotContainer {
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
 
-  private final ExampleCommand m_autoCommand = new SequentialCommandGroup(
+  private final Command m_autoCommand = new SequentialCommandGroup(
     new InstantCommand(() -> m_exampleSubsystem.tankDrive(0.2, -0.2), m_exampleSubsystem),
 
     new WaitCommand(2),
