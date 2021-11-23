@@ -32,6 +32,15 @@ public class Drivetrain extends SubsystemBase {
     rightPower = throttle - turn;
   }
 
+  public void tankDrive(double leftPower, double rightPower) {
+    leftMotor1.set(ControlMode.PercentOutput, leftPower);
+    rightMotor1.set(ControlMode.PercentOutput, rightPower);
+
+    //if using a sparkmax
+    // leftMotor1.set(leftPower);
+    // rightMotor1.set(rightPower);
+  }
+
   @Override
   public void periodic() {
     leftMotor1.set(ControlMode.PercentOutput, leftPower);
