@@ -19,6 +19,6 @@ import java.util.*;
 public final class Constants {
     public static final int leftMotor1ID = 1;
     public static final int leftMotor2ID = 2;
-    public static final int rightMotor1D = 4;
+    public static final int rightMotor1ID = 4;
     public static final int rightMotor2ID = 5;
 }

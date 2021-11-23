@@ -16,6 +16,8 @@ import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
 
+
+
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -29,7 +31,7 @@ public class RobotContainer {
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
 
-  private final ExampleCommand m_autoCommand = new SequentialCommandGroup(
+  private final Command m_autoCommand = new SequentialCommandGroup(
     new InstantCommand(() -> m_exampleSubsystem.tankDrive(0.2, -0.2), m_exampleSubsystem),
 
     new WaitCommand(2),
