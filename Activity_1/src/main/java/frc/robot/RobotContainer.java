@@ -24,6 +24,7 @@ import edu.wpi.first.wpilibj2.command.*;
 public class RobotContainer {
   //subsystems
   private final DriveSubsystem m_robotDrive = new DriveSubsystem();
+  private final DriveSubsystem m_robotIntake = new IntakeSubsystem();
 
   //autonomous command, will spin robot in circle
   private final Command m_autoCommand = new SequentialCommandGroup(
