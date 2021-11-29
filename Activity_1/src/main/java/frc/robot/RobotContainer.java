@@ -32,8 +32,10 @@ public class RobotContainer {
 
     new WaitCommand(3),
 
-    new InstantCommand(() -> m_robotDrive.tankDrive(0, 0),
-    m_robotDrive)
+    new InstantCommand(() -> m_robotDrive.tankDrive(-0.2, -0.2),
+    m_robotDrive),
+
+    new WaitCommand(0.5)
 
   );
   
@@ -62,7 +64,11 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-
+    new JoystickButton(controller, DriveConstants.kY).whenPressed(() -> m_robotIntake.spinIntake());
+    new JoystickButton(controller, DriveConstants.kY).whenReleased(() -> m_robotIntake.stopIntake());
+    
+    new JoystickButton(controller, DriveConstants.kB).whenPressed(() -> m_robotIntake.spinIntake());
+    new JoystickButton(controller, DriveConstants.kB).whenReleased(() -> m_robotIntake.stopIntake());
   }
 
   public static double getMotorSpeed(int port) {
