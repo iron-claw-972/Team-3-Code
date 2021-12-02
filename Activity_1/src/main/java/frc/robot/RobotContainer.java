@@ -28,6 +28,8 @@ public class RobotContainer {
 
   //autonomous command, will spin robot in circle
   private final Command m_autoCommand = new SequentialCommandGroup(
+    new InstantCommand(() -> m_robotIntake.spinIntake()).withTimeout(1),
+
     new InstantCommand(() -> m_robotDrive.tankDrive(0.2, -0.2),
     m_robotDrive),
 
@@ -65,10 +67,10 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    new JoystickButton(controller, DriveConstants.kY).whenPressed(() -> m_robotIntake.spinIntake());
-    new JoystickButton(controller, DriveConstants.kY).whenReleased(() -> m_robotIntake.stopIntake());
+    new JoystickButton(controller, DriveConstants.kA).whenPressed(() -> m_robotIntake.spinIntake());
+    new JoystickButton(controller, DriveConstants.kA).whenReleased(() -> m_robotIntake.stopIntake());
     
-    new JoystickButton(controller, DriveConstants.kB).whenPressed(() -> m_robotIntake.spinIntake());
+    new JoystickButton(controller, DriveConstants.kB).whenPressed(() -> m_robotIntake.reverseIntake());
     new JoystickButton(controller, DriveConstants.kB).whenReleased(() -> m_robotIntake.stopIntake());
   }
 

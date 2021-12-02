@@ -23,7 +23,8 @@ public class IntakeSubsystem extends SubsystemBase {
   // See https://github.com/iron-claw-972/HowToProgramming for how to do this. 
   // Make sure to set the right amount of motors! (if you only have 2 motors don't make 4)
 
- // TalonSRX intake = new TalonSRX(8);
+  // TalonSRX intake1 = new TalonSRX(1);
+  // TalonSRX intake2 = new TalonSRX(2);
   
   /**
    * Creates a new Subsystem.
@@ -33,15 +34,18 @@ public class IntakeSubsystem extends SubsystemBase {
   }
 
   public void spinIntake(){ 
-    intake.set(ControlMode.PercentOutput,-.9);
+    intake1.set(ControlMode.PercentOutput,-.9);
+    intake2.set(ControlMode.PercentOutput,-.9);
   }
 
   public void reverseIntake(){
-    intake.set(ControlMode.PercentOutput,.9);
+    intake1.set(ControlMode.PercentOutput,.9);
+    intake2.set(ControlMode.PercentOutput,.9);
   }
 
   public void stopIntake(){
-    intake.set(ControlMode.PercentOutput, 0);
+    intake1.set(ControlMode.PercentOutput, 0);
+    intake2.set(ControlMode.PercentOutput, 0);
   }
 
 }
